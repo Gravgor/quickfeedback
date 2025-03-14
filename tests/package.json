@@ -1,0 +1,18 @@
+{
+  "name": "quickfeedback-widget-tests",
+  "version": "1.0.0",
+  "description": "Test files for QuickFeedback widget",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node server.js & node open-test.js index.html 8080",
+    "test:top-left": "node server.js & node open-test.js top-left.html 8080",
+    "test:custom-branding": "node server.js & node open-test.js custom-branding.html 8080",
+    "open": "node open-test.js",
+    "open:top-left": "node open-test.js top-left.html",
+    "open:custom-branding": "node open-test.js custom-branding.html"
+  },
+  "author": "",
+  "license": "MIT"
+}
+ 

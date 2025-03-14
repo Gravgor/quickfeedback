@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickFeedback Widget Test - Top Left Position</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    header {
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      color: #2563eb;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .highlight {
+      background-color: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+    }
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eaeaea;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QuickFeedback Widget Test - Top Left Position</h1>
+    <p>This page demonstrates the widget in the top-left position with a different color.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="highlight">
+        <strong>Note:</strong> The feedback button should appear in the <strong>top-left</strong> corner of the screen with a purple color.
+      </div>
+      
+      <h2>Widget Positioning</h2>
+      <p>
+        The QuickFeedback widget can be positioned in four different locations:
+      </p>
+      <ul>
+        <li><strong>bottom-right</strong> (default)</li>
+        <li><strong>bottom-left</strong></li>
+        <li><strong>top-right</strong></li>
+        <li><strong>top-left</strong> (shown on this page)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Widget Color Customization</h2>
+      <p>
+        The widget color can be customized using the <code>data-color</code> attribute.
+        On this page, we've set it to <code>#8b5cf6</code> (purple).
+      </p>
+    </section>
+
+    <section>
+      <h2>Test Links</h2>
+      <ul>
+        <li><a href="index.html">Default Position (bottom-right)</a></li>
+        <li><a href="top-left.html">Top Left Position</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Content for Testing</h2>
+      <div class="card">
+        <h3>Sample Content</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies 
+          lacinia, nisl nisl aliquet nisl, eget aliquet nisl nisl eget nisl. Nullam auctor, nisl eget
+          ultricies lacinia, nisl nisl aliquet nisl, eget aliquet nisl nisl eget nisl.
+        </p>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+          dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>QuickFeedback Test Page - For testing purposes only</p>
+  </footer>
+
+  <!-- QuickFeedback Widget Script -->
+  <script 
+    src="http://localhost:3000/widget.js" 
+    data-site-id="e6041cff-c3f1-49a1-82b2-eed2d74ebdac" 
+    data-position="top-left" 
+    data-color="#8b5cf6"
+    data-company="Your Company">
+  </script>
+</body>
+</html> 
