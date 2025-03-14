@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { createClientServer } from '@/utils/server.supabase';
 
 export default function Login() {
   const [email, setEmail] = useState('');

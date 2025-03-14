@@ -1,5 +1,11 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Site } from '@/utils/supabase';
+
+interface Site {
+  id?: string;
+  name?: string;
+}
 
 interface SiteOnboardingProps {
   site: Site;
