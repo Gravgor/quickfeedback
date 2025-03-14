@@ -13,7 +13,7 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.text();
-    const headersList = headers();
+    const headersList = await headers();
     const signature = headersList.get('stripe-signature');
 
     if (!signature || !webhookSecret) {
@@ -51,7 +51,15 @@ export async function POST(req: NextRequest) {
           }
           
           // Find the user ID from the customer metadata
-          const customer = await stripe.customers.retrieve(session.customer as string);
+          const customerResponse = await stripe.customers.retrieve(session.customer as string);
+          
+          // Check if customer is deleted or exists
+          if (customerResponse.deleted) {
+            console.error('Customer has been deleted');
+            break;
+          }
+          
+          const customer = customerResponse as Stripe.Customer;
           const userId = customer.metadata?.userId;
           
           if (!userId) {
@@ -80,7 +88,15 @@ export async function POST(req: NextRequest) {
         const customerId = subscription.customer as string;
         
         // Get the user ID from the customer metadata
-        const customer = await stripe.customers.retrieve(customerId);
+        const customerResponse = await stripe.customers.retrieve(customerId);
+        
+        // Check if customer is deleted or exists
+        if (customerResponse.deleted) {
+          console.error('Customer has been deleted');
+          break;
+        }
+        
+        const customer = customerResponse as Stripe.Customer;
         const userId = customer.metadata?.userId;
         
         if (!userId) {
@@ -130,7 +146,15 @@ export async function POST(req: NextRequest) {
         const customerId = subscription.customer as string;
         
         // Get the user ID from the customer metadata
-        const customer = await stripe.customers.retrieve(customerId);
+        const customerResponse = await stripe.customers.retrieve(customerId);
+        
+        // Check if customer is deleted or exists
+        if (customerResponse.deleted) {
+          console.error('Customer has been deleted');
+          break;
+        }
+        
+        const customer = customerResponse as Stripe.Customer;
         const userId = customer.metadata?.userId;
         
         if (!userId) {

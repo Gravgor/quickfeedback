@@ -5,7 +5,7 @@ import { createServerClient } from '@supabase/ssr';
  * Get the current user's session
  */
 export async function getSession() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

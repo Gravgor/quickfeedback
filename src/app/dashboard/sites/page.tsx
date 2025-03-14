@@ -27,8 +27,10 @@ export default function SitesList() {
         // Load analytics for each site
         const analyticsData: Record<string, any> = {};
         for (const site of userSites) {
-          const siteAnalytics = await getSiteAnalytics(site.id);
-          analyticsData[site.id] = siteAnalytics;
+          if (site.id) {
+            const siteAnalytics = await getSiteAnalytics(site.id);
+            analyticsData[site.id] = siteAnalytics;
+          }
         }
         setAnalytics(analyticsData);
       } catch (error) {
