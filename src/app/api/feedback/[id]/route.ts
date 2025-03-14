@@ -4,10 +4,10 @@ import { getSiteById } from '@/services/siteService';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = params.id;
+    const id = (await params).id;
     
     // Fetch the feedback
     const feedback = await getFeedbackById(id);
@@ -32,10 +32,10 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = params.id;
+    const id = (await params).id;
     
     // Verify the feedback exists
     const feedback = await getFeedbackById(id);

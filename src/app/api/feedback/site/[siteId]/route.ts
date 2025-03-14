@@ -4,10 +4,10 @@ import { getSiteById } from '@/services/siteService';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { siteId: string } }
+  { params }: { params: Promise<{ siteId: string }> }
 ) {
   try {
-    const siteId = params.siteId;
+    const siteId = (await params).siteId;
     const includeAnalytics = request.nextUrl.searchParams.get('analytics') === 'true';
     
     // Verify the site exists
