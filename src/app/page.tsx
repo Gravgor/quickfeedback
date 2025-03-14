@@ -54,6 +54,11 @@ export default function Home() {
             <p className="text-xl text-gray-600">
               Get actionable user insights in minutes – no heavy analytics tools required!
             </p>
+            
+            <div className="mt-2 bg-blue-50 border border-blue-200 rounded-lg p-3 text-blue-800">
+              <span className="font-medium">✨ Currently 100% Free!</span> We're testing this idea and offering all features free of charge during our beta period.
+            </div>
+            
             <div className="flex gap-4 mt-6">
               <Link 
                 href="/signup" 
@@ -153,7 +158,12 @@ export default function Home() {
       <section id="pricing" className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-6">Simple Pricing</h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Start for free and upgrade as you grow. No credit card required to get started.</p>
+          <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">Start for free and upgrade as you grow. No credit card required to get started.</p>
+          
+          <div className="text-center bg-blue-50 border border-blue-200 rounded-lg p-4 text-blue-800 max-w-2xl mx-auto mb-16">
+            <p className="font-medium">🎉 All plans are currently free during our beta period!</p>
+            <p className="text-sm mt-1">We're testing the idea and gathering feedback. Sign up now to lock in benefits before paid plans are introduced.</p>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="border border-gray-200 rounded-xl p-8">
